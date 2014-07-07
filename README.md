@@ -45,7 +45,7 @@ $('#button').off('click', buttonHandler);
 
 To remove **all** event listeners for an event, omit the callback argument:
 ```
-$('#button').off('click';
+$('#button').off('click');
 ```
 
 
