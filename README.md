@@ -1,6 +1,6 @@
 pocketJS
 ========
-The mini jQuery-like library. The goal was to fit as many jQuery-like features into less than 1kb (after minification).
+The mini jQuery-like library. I wanted to see how many jQuery-like features I could fit into less than 1kb (after minification).
 
 
 
@@ -20,6 +20,9 @@ Usage
 To select an element, pass any valid CSS selector into $():
 ```
 $('#button')
+$('.list')
+$('a')
+$('#wrapper ul > li:first-child')
 ```
 
 ### Executing a function when the DOM is ready
