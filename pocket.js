@@ -1,9 +1,8 @@
 /*
-*  PocketJS
-*  The mini jQuery-like library. Designed to compress efficiently, weighing in at less than 1kb after minification.
-*
-*  Copyright (c) 2014 Andrew Aponte (@callMeMrAponte)
-*  Released under the MIT license
+  PocketJS v1.1
+
+  (c) 2014 Andrew Aponte (@callMeMrAponte)
+  Released under the MIT license
 */
 
 !function(document, classList, addEventListener, array) {
@@ -47,18 +46,8 @@
 			return this;
 		},
 
-		addClass: function(className) {
-			this.each(function(el){ el[classList].add(className); });
-			return this;
-		},
-
-		removeClass: function(className) {
-			this.each(function(el){ el[classList].remove(className); });
-			return this;
-		},
-
 		toggle: function(className) {
-			this.each(function(el){ el[classList].toggle(className); });
+			className ? this.each(function(el){ el[classList].toggle(className); }) : this.each(function(el){ el.style.display === 'none' ? el.style.display = 'block' : el.style.display = 'none'; }) ;
 			return this;
 		},
 
