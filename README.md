@@ -61,24 +61,17 @@ $('a').each(function() {
 ```
 
 
-### Adding a class
-To add a class, use the addClass() method:
-```
-$('a').addClass('link');
-```
-
-
-### Removing a class
-To remove a class, use the removeClass() method:
-```
-$('a').removeClass('link');
-```
-
-
 ### Toggling a class
 To toggle a class, use the toggle() method:
 ```
 $('a').toggle('link');
+```
+
+
+### Toggling display
+To toggle the display of an element, call the toggle() method without passing any arguments:
+```
+$('a').toggle();
 ```
 
 
