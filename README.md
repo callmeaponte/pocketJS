@@ -1,12 +1,12 @@
 pocketJS
 ========
-The mini jQuery-like library. For fun, I decided to see how many jQuery-like features I could fit into 1kb of code (after minification). Loosely based off of ki.js (https://github.com/dciccale/ki.js), with more functionality added.
+The mini jQuery-like library. I wanted to see how many features I could fit into less than 1kb of code (after minification). Loosely based off of ki.js (https://github.com/dciccale/ki.js), with more functionality added.
 
 
 
 Installation
 ============
-To install, simply include the script anywhere on your page.
+To install, simply include the script anywhere on your page:
 ```
 <script src="pocket.min.js"></script>
 ```
@@ -34,6 +34,7 @@ $(document)
 ... Note that passing any falsy value will simply return an empty array.
 
 
+
 ### Executing a function when the DOM is ready
 Passing a function to $() ensures that it will not run until the DOM is ready:
 ```
@@ -41,6 +42,7 @@ $(function(){
   console.log('The DOM is ready!');
 })
 ```
+
 
 ### Adding an event listener
 To add an event listener, use the on() method. Pass the event name and callback as arguments:
