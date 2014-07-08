@@ -24,7 +24,6 @@ $('.list')
 $('a')
 $('#wrapper ul > li:first-child')
 ```
-... attempting to pass any empty strings will fail silently.
 
 
 ### Wrapping DOM elements
