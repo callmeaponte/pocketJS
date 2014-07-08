@@ -27,10 +27,11 @@ $('#wrapper ul > li:first-child')
 
 
 ### Wrapping DOM elements
-You can also pass a DOM object into $():
+You can also pass any DOM object into $():
 ```
 $(document)
 ```
+... Note that passing any falsy value will simply return an empty array.
 
 
 ### Executing a function when the DOM is ready
