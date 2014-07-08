@@ -5,7 +5,7 @@
   Released under the MIT license
 */
 
-!function(document, classList, addEventListener, array, each, none) {
+!function(document, classList, addEventListener, array, each, nullType) {
 	// if a CSS selector is passed, it will retrieve the specified element(s) from the DOM
 	// if a DOM object is passed, it will return a Pocket object with the DOM object(s) wrapped inside
 	// if a function is passed, it will execute the function on DOM ready (or immediately if DOM is already interactive)
@@ -14,7 +14,7 @@
 	};
 
 	$.get = function(url, callback) {
-		ajax('get', url, null, callback);
+		ajax('get', url, nullType, callback);
 	};
 
 	$.post = function(url, data, callback) {
@@ -33,7 +33,7 @@
 
 	function Pocket(args) {
 		// The apply function is called on the Array.prototype.push method to store an array-like collection of the results on the Pocket object
-		array.push.apply(this, args.nodeType ? [args] : args.trim() ? document.querySelectorAll(args) : null);
+		array.push.apply(this, args ? args.nodeType ? [args] : document.querySelectorAll(args) : nullType);
 	}
 
 	Pocket.prototype = {
@@ -46,17 +46,13 @@
 		},
 
 		off: function(event, callback) {
-			if (!callback) {
+			return callback ? this[each](function(el) { el.removeEventListener(event, callback) }) : 
 				// If no callback is passed in, then we will remove ALL events from the element(s)
 				this[each](function(el) {
 					// The only way to effectively remove all events is to replace the element with a clone of itself
 					var clone = el.cloneNode(true);
 					el.parentNode.replaceChild(clone, el);
-				});
-			} else {
-				this[each](function(el) { el.removeEventListener(event, callback) });
-			}
-			return this;
+				})
 		},
 
 		each: function(callback) {
@@ -65,7 +61,10 @@
 		},
 
 		toggle: function(className) {
-			return className ? this[each](function(el){ el[classList].toggle(className); }) : this[each](function(el){ el.style.display == none ? el.style.display = 'block' : el.style.display = none; }) ;
+			// Toggle the class name if passed
+			// If no argument was passed, toggle the display
+			return className ? this[each](function(el){ el[classList].toggle(className); }) :
+							   this[each](function(el){ el.style.display == 'none' ? el.style.display = 'block' : el.style.display = 'none'; }) ;
 		},
 
 		html: function(html) {
@@ -75,4 +74,4 @@
 		// if the splice method is present, an array-like object is returned
 		splice: array.splice
 	};
-}(document, 'classList', 'addEventListener', [], 'each', 'none')
+}(document, 'classList', 'addEventListener', [], 'each')
