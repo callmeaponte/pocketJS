@@ -1,6 +1,6 @@
 pocketJS
 ========
-The mini jQuery-like library. I wanted to see how many jQuery-like features I could fit into less than 1kb (after minification).
+The mini jQuery-like library. For fun, I decided to see how many jQuery-like features I could fit into 1kb of code (after minification). Loosely based off of ki.js (https://github.com/dciccale/ki.js), with more functionality added.
 
 
 
