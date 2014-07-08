@@ -24,6 +24,15 @@ $('.list')
 $('a')
 $('#wrapper ul > li:first-child')
 ```
+... attempting to pass any empty strings will fail silently.
+
+
+### Wrapping DOM elements
+You can also pass a DOM object into $():
+```
+$(document)
+```
+
 
 ### Executing a function when the DOM is ready
 Passing a function to $() ensures that it will not run until the DOM is ready:
@@ -50,6 +59,21 @@ To remove **all** event listeners for an event, omit the callback argument:
 ```
 $('#button').off('click');
 ```
+
+
+### Sending an AJAX GET request
+To send an AJAX GET request, use the get() utility method. Pass the url and callback as arguments:
+```
+$.get('someurl.php', callbackFunction);
+```
+
+
+### Sending an AJAX POST request
+To send an AJAX POST request, use the post() utility method. Pass the url, data, and callback as arguments:
+```
+$.post('someurl.php', 'hello world', callbackFunction);
+```
+
 
 
 ### Looping through elements
