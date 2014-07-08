@@ -65,7 +65,7 @@
 		},
 
 		toggle: function(className) {
-			return className ? this[each](function(el){ el[classList].toggle(className); }) : this[each](function(el){ var display = el.style.display; display == none ? display = 'block' : display = none; }) ;
+			return className ? this[each](function(el){ el[classList].toggle(className); }) : this[each](function(el){ el.style.display == none ? el.style.display = 'block' : el.style.display = none; }) ;
 		},
 
 		html: function(html) {
