@@ -69,6 +69,13 @@ $('#button').off('click');
 ```
 
 
+### Triggering an event
+To trigger an event, use the trigger() method. Pass the event name as an argument:
+```
+$('#button').trigger('click');
+```
+
+
 ### Sending an AJAX GET request
 To send an AJAX GET request, use the get() utility method. Pass the url and callback as arguments:
 ```
