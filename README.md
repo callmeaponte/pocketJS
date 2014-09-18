@@ -1,6 +1,6 @@
 pocketJS
 ========
-The mini jQuery-like library. I wanted to see how many features I could fit into less than 1kb of code (after minification). Loosely based off of ki.js (https://github.com/dciccale/ki.js), with more functionality added.
+The mini jQuery-like library. I wanted to see how many features I could fit into around 1kb of code (after minification). Loosely based off of ki.js (https://github.com/dciccale/ki.js), with more features added.
 
 
 
@@ -26,13 +26,19 @@ $('#wrapper ul > li:first-child')
 ```
 
 
+### Selecting a descendant element
+You can find a descendant element in the current set of matched elements by using the find() method:
+```
+$('.list').find('.item')
+```
+... Note that passing any falsy value will simply return an empty array.
+
+
 ### Wrapping DOM elements
 You can also pass any DOM object into $():
 ```
 $(document)
 ```
-... Note that passing any falsy value will simply return an empty array.
-
 
 
 ### Executing a function when the DOM is ready
@@ -84,6 +90,13 @@ To loop through each element in a returned collection of elements, use the each(
 $('a').each(function() {
   console.log(this.href);
 });
+```
+
+
+### Checking if a class exists
+To check if a class exists, pass the class name to the hasClass method:
+```
+$('a').hasClass('link');
 ```
 
 
