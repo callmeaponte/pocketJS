@@ -16,7 +16,7 @@ To install, simply include the script anywhere on your page:
 Usage
 =====
 
-### Selecting DOM elements
+### Selecting elements
 To select an element, pass any valid CSS selector into $():
 ```
 $('#button')
