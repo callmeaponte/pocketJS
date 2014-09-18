@@ -1,5 +1,5 @@
 /*
-  PocketJS v1.2
+  PocketJS v1.3
 
   (c) 2014 Andrew Aponte (@callMeMrAponte)
   Released under the MIT license
@@ -9,15 +9,15 @@
 	// if a CSS selector is passed, it will retrieve the specified element(s) from the DOM
 	// if a DOM object is passed, it will return a Pocket object with the DOM object(s) wrapped inside
 	// if a function is passed, it will execute the function on DOM ready (or immediately if DOM is already interactive)
-	$ = function(args) {
-		return /^f/.test(args) ? (!/e/.test(document.readyState) ? document[addEventListener]('DOMContentLoaded', args) : args()) : new Pocket(args);
+	$$ = function(args) {
+		return /^fu/.test(args) ? (!/e/.test(document.readyState) ? document[addEventListener]('DOMContentLoaded', args) : args()) : new Pocket(args);
 	};
 
-	$.get = function(url, callback) {
+	$$.get = function(url, callback) {
 		ajax('get', url, nullType, callback);
 	};
 
-	$.post = function(url, data, callback) {
+	$$.post = function(url, data, callback) {
 		ajax('post', url, data, callback);
 	};
 
@@ -69,6 +69,16 @@
 
 		html: function(html) {
 			return this[each](function(el) { el.innerHTML = html; });
+		},
+
+		hasClass: function(className) {
+			return array.some.call(this, function(el) {
+				return el.className && new RegExp("(^|\\s)" + className + "(\\s|$)").test(el.className)
+			});
+		},
+
+		find: function(selector) {
+			return new Pocket(selector);
 		},
 
 		// if the splice method is present, an array-like object is returned
