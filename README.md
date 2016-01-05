@@ -131,7 +131,7 @@ $('a').html('click me');
 ### Chaining methods
 PocketJS supports the chaining of methods, which means the following is possible:
 ```
-$('a').html('click me').addClass('active');
+$('a').html('click me').toggle('active');
 ```
 
 
